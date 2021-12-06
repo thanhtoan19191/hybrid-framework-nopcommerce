@@ -12,16 +12,17 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.BasePage;
-import commons.BaseTest;
-import pageFactory.nopCommerce.HomePageObject;
-import pageFactory.nopCommerce.LoginPageObject;
-import pageFactory.nopCommerce.RegisterPageObject;
 
-public class Level_05_Page_Factory extends BaseTest {
+import commons.BaseTest;
+import pageObjects.nopCommerce.HomePageObject;
+import pageObjects.nopCommerce.LoginPageObject;
+import pageObjects.nopCommerce.RegisterPageObject;
+
+public class Level_06_Page_Generator_Manager_I extends BaseTest {
 	
 	
 	private WebDriver driver;
+	
 	private String firstName, lastName, invalidEmail, notFoundEmail,existingEmail,validPassword, incorrectPassword;
 	private HomePageObject homePage ;
 	private RegisterPageObject registerPage ;
@@ -33,7 +34,8 @@ public class Level_05_Page_Factory extends BaseTest {
 		
 		
 		driver = getBrowserDriver(browserName);
-		
+		//1
+		homePage = new HomePageObject(driver);
 		
 		firstName="Automation";
 		lastName="FC";
@@ -43,9 +45,10 @@ public class Level_05_Page_Factory extends BaseTest {
 		existingEmail = "auto" + generateFakeNumber() + "@mail.com";
 		notFoundEmail="auto" + generateFakeNumber() + "@mail.vn";
 		
-		homePage = new HomePageObject(driver);
+		
 		System.out.println("Precondition - Step 01: Click to Register link");
 		homePage.clickToRegisterLink();
+		//2
 		registerPage = new RegisterPageObject(driver);
 		
 		
@@ -64,14 +67,14 @@ public class Level_05_Page_Factory extends BaseTest {
 		
 		System.out.println("Precondition - Step 05: Click to Logout link");
 		registerPage.clickToLogoutLink();
-		
+		//3
 		homePage = new HomePageObject(driver);
 	}
 
 	@Test
 	public void Login_01_Empty_Data() {
 		homePage.clickToLoginLink();
-		
+		//4
 		loginPage = new LoginPageObject(driver);
 
 		loginPage.clickToLoginButton();
@@ -85,6 +88,7 @@ public class Level_05_Page_Factory extends BaseTest {
 	@Test
 	public void Login_02_Invalid_Email() {
 		homePage.clickToLoginLink();
+		//5
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(invalidEmail);
 		loginPage.clickToLoginButton();
@@ -96,6 +100,7 @@ public class Level_05_Page_Factory extends BaseTest {
 	@Test
 	public void Login_03_Email_Not_Found() {
 		homePage.clickToLoginLink();
+		//6
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(notFoundEmail);
 		loginPage.clickToLoginButton();
@@ -105,6 +110,7 @@ public class Level_05_Page_Factory extends BaseTest {
 	@Test
 	public void Login_04_Existing_Email_Empty_Password() {
 		homePage.clickToLoginLink();
+		//7
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("");
@@ -116,6 +122,7 @@ public class Level_05_Page_Factory extends BaseTest {
 	@Test
 	public void Login_05_Existing_Email_Incorrect_Password() {
 		homePage.clickToLoginLink();
+		//8
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(incorrectPassword);
@@ -126,6 +133,7 @@ public class Level_05_Page_Factory extends BaseTest {
 	@Test
 	public void Login_06_Valid_Email_Password() {
 		homePage.clickToLoginLink();
+		//9
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(validPassword);
@@ -139,10 +147,6 @@ public class Level_05_Page_Factory extends BaseTest {
 		driver.quit();
 	}
 
-	public int generateFakeNumber() {
-		Random rand = new Random();
-		return rand.nextInt(9999);
-	}
 
 
 }

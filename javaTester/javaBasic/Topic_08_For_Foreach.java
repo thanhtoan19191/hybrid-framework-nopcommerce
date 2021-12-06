@@ -9,7 +9,7 @@ public class Topic_08_For_Foreach {
 	Scanner scanner = new Scanner (System.in);
 	
 	
-	//@Test
+	@Test
 	public void TC_01() {
 		int number = scanner.nextInt();
 		for ( int i = 1; i <= number; i++) {
@@ -75,7 +75,7 @@ public class Topic_08_For_Foreach {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void TC_07() {
 		int number = scanner.nextInt();
 		int tich=1;

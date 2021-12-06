@@ -1,0 +1,140 @@
+package com.nopcommerce.user;
+
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+
+import commons.BaseTest;
+import pageObjects.nopCommerce.HomePageObject;
+import pageObjects.nopCommerce.LoginPageObject;
+import pageObjects.nopCommerce.MyProductReviewPageObject;
+import pageObjects.nopCommerce.AddressPageObject;
+import pageObjects.nopCommerce.CustomerInForPageObject;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.RegisterPageObject;
+import pageObjects.nopCommerce.RewardPointPageObject;
+
+public class Level_07_Switch_Page extends BaseTest {
+	
+	
+	private WebDriver driver;
+	
+	private String firstName, lastName,emailAddress,validPassword;
+	private HomePageObject homePage ;
+	private RegisterPageObject registerPage ;
+	private LoginPageObject loginPage;
+	private CustomerInForPageObject customerInforPage ;
+	private AddressPageObject addressPage ;
+	private MyProductReviewPageObject myProductReviewPage ;
+	private RewardPointPageObject rewardPointPage ;
+	
+	@Parameters("browser")
+	@BeforeClass
+	public void beforeClass(String browserName) {
+		
+		
+		driver = getBrowserDriver(browserName);
+		
+		homePage = PageGeneratorManager.getHomePage(driver);
+		
+		firstName="Automation";
+		lastName="FC";
+		validPassword = "123456";
+		emailAddress = "auto" + generateFakeNumber() + "@mail.com";
+		
+		
+		
+		
+		
+	}
+
+	@Test
+	public void User_01_Register() {
+
+		registerPage = homePage.clickToRegisterLink();
+
+		registerPage.inputToFirstnameTextbox(firstName);
+		registerPage.inputToLastnameTextbox(lastName);
+		registerPage.inputToEmailTextbox(emailAddress);
+		registerPage.inputToPasswordTextbox(validPassword);
+		registerPage.inputToConfirmPasswordTextbox(validPassword);
+
+		registerPage.clickToRegisterButton();
+		
+		Assert.assertEquals(registerPage.getRegisterSuccessMessage(),"Your registration completed");
+		
+		homePage =registerPage.clickToLogoutLink();
+	
+	}
+
+	@Test
+	public void User_02_Login() {
+		loginPage = homePage.clickToLoginLink();
+		
+		
+
+		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inputToPasswordTextbox(validPassword);
+		homePage = loginPage.clickToLoginButton();
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+
+	}
+
+	@Test
+	public void User_03_Customer_Infor() {
+		customerInforPage =  homePage.clickToMyAccountLink();
+		//Assert.assertTrue(customerInforPage.isCustomerInforPageDisplayed()); 
+	}
+
+	@Test
+	public void User_04_Switch_Page() {
+		
+		// Customer infor -> address
+		addressPage= customerInforPage.openAddressPage(driver);
+		
+		// adress -> my produtc review
+		myProductReviewPage= addressPage.openMyProductReviewPage(driver);
+		
+		//my produtc review -> reward point
+		rewardPointPage =  myProductReviewPage.openRewardPoint(driver);
+		
+		//reward point -> address
+		addressPage= rewardPointPage.openAddressPage(driver);
+		
+		//address -> reward point
+		rewardPointPage =addressPage.openRewardPoint(driver);
+		
+		//reward point -> my produtc review
+		myProductReviewPage= rewardPointPage.openMyProductReviewPage(driver);
+		
+		//My Product review -> Address
+		addressPage =  myProductReviewPage.openAddressPage(driver);
+		
+		customerInforPage= addressPage.openCustomerInforPage(driver);
+		
+		myProductReviewPage= customerInforPage.openMyProductReviewPage(driver);
+	}
+
+	@Test
+	public void User_04_Switch_Role() {
+		
+
+	}
+
+	@AfterClass
+	public void afterClass() {
+		driver.quit();
+	}
+
+
+
+}
