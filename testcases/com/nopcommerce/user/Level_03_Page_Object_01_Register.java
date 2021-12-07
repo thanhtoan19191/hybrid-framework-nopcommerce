@@ -12,13 +12,13 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_03_Page_Object_01_Register extends BasePage {
 	
-	private HomePageObject homePage ;
-	private RegisterPageObject registerPage ;
+	private UserHomePageObject homePage ;
+	private UserRegisterPageObject registerPage ;
 	private WebDriver driver;
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, emailAddress,password;
@@ -29,8 +29,8 @@ public class Level_03_Page_Object_01_Register extends BasePage {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		firstName="Automation";
 		lastName="FC";

@@ -14,9 +14,9 @@ import org.testng.annotations.Test;
 
 
 import commons.BaseTest;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.LoginPageObject;
-import pageObjects.nopCommerce.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	
@@ -24,9 +24,9 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	private WebDriver driver;
 	
 	private String firstName, lastName, invalidEmail, notFoundEmail,existingEmail,validPassword, incorrectPassword;
-	private HomePageObject homePage ;
-	private RegisterPageObject registerPage ;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage ;
+	private UserRegisterPageObject registerPage ;
+	private UserLoginPageObject loginPage;
 	
 	@Parameters("browser")
 	@BeforeClass
@@ -36,7 +36,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 		driver = getBrowserDriver(browserName);
 		//1
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName="Automation";
 		lastName="FC";

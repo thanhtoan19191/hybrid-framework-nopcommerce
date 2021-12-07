@@ -1,14 +1,14 @@
-package pageObjects.nopCommerce;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.nopCommerce.RewardPointPageUI;
+import pageUIs.nopCommerce.user.RewardPointPageUI;
 
-public class RewardPointPageObject extends BasePage{
+public class UserRewardPointPageObject extends BasePage{
 WebDriver driver;
 	
-	public RewardPointPageObject(WebDriver driver) {
+	public UserRewardPointPageObject(WebDriver driver) {
 		this.driver=driver;
 	}
 

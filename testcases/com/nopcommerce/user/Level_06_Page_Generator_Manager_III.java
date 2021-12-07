@@ -14,11 +14,11 @@ import org.testng.annotations.Test;
 
 
 import commons.BaseTest;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.LoginPageObject;
-import pageObjects.nopCommerce.CustomerInForPageObject;
-import pageObjects.nopCommerce.PageGeneratorManager;
-import pageObjects.nopCommerce.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopCommerce.user.UserCustomerInForPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_III extends BaseTest {
 	
@@ -26,10 +26,10 @@ public class Level_06_Page_Generator_Manager_III extends BaseTest {
 	private WebDriver driver;
 	
 	private String firstName, lastName, invalidEmail, notFoundEmail,existingEmail,validPassword, incorrectPassword;
-	private HomePageObject homePage ;
-	private RegisterPageObject registerPage ;
-	private LoginPageObject loginPage;
-	private CustomerInForPageObject myAccountPage ;
+	private UserHomePageObject homePage ;
+	private UserRegisterPageObject registerPage ;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInForPageObject myAccountPage ;
 	
 	@Parameters("browser")
 	@BeforeClass
