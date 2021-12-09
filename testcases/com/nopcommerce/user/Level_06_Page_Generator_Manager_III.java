@@ -38,7 +38,7 @@ public class Level_06_Page_Generator_Manager_III extends BaseTest {
 		
 		driver = getBrowserDriver(browserName);
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		firstName="Automation";
 		lastName="FC";

@@ -38,6 +38,11 @@ public class UserHomePageObject extends BasePage {
 		return PageGeneratorManager.getUserCustomerInforPage(driver);
 	}
 
+	public UserCustomerInForPageObject openMyAccountPage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 	
