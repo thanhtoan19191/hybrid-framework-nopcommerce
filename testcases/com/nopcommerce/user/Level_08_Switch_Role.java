@@ -55,7 +55,7 @@ public class Level_08_Switch_Role extends BaseTest {
 		
 		
 		userPassword = "123456";
-		userEmailAddress = "toanfg@gmail.com";	
+		userEmailAddress = "toanzx@gmail.com";	
 		adminEmailAddress="admin@yourstore.com";
 		adminPassword="admin";
 	}
@@ -68,7 +68,7 @@ public class Level_08_Switch_Role extends BaseTest {
 		Assert.assertTrue(userHomePage.isMyAccountLinkDisplayed());
 		
 		//Home page -> customer infor
-		//userCustomerInforPage= userHomePage.openMyAccountPage();
+		userCustomerInforPage= userHomePage.clickToMyAccountLink();
 		
 		//Customer infor click logout -> home page
 		userHomePage= userCustomerInforPage.clickToLogoutLinkAtUserPage(driver);
