@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import pageObjects.nopCommerce.user.UserAddressPageObject;
+import pageObjects.nopCommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopCommerce.user.UserCustomerInForPageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
@@ -26,14 +27,15 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 	
 	private WebDriver driver;
 	
-	private String firstName, lastName, invalidEmail, notFoundEmail,
-	existingEmail,validPassword, incorrectPassword,editFirstName,editLastName,dayOfBirth,
-	monthOfBirth,yearOfBirth,editEmail,company,emailAddress,country;
+	private String firstName, lastName,
+	existingEmail,validPassword,editFirstName,editLastName,dayOfBirth,
+	monthOfBirth,yearOfBirth,editEmail,company,emailAddress,country,city, address_1,zipcode,phoneNumber,newPassword;
 	private UserHomePageObject homePage ;
 	private UserRegisterPageObject registerPage ;
 	private UserLoginPageObject loginPage;
 	private UserCustomerInForPageObject customerInforPage;
 	private UserAddressPageObject addressPage;
+	private UserChangePasswordPageObject changePasswordPage;
 	
 	@Parameters("browser")
 	@BeforeClass
@@ -51,13 +53,17 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 		editFirstName="Automation";
 		editLastName="FCC";
 		dayOfBirth="1";
-		monthOfBirth="1";
+		monthOfBirth="January";
 		yearOfBirth="1999";
 		editEmail="Automationfc.vn@gmail.com";
 		company="AutomationFC";
 		emailAddress="automationfc.vn@gmail.com";
 		country="Viet Nam";
-		
+		city="Da Nang";
+		address_1="123/04 le Lai";
+		zipcode="550000";
+		phoneNumber="0123456789";
+		newPassword="654321";
 		
 	
 		
@@ -117,19 +123,33 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 		
 		
 		addressPage.selectCountryAddress(country);
-		/*
-		 * addressPage.inputCityAddress(); addressPage.inputAddress1();
-		 * addressPage.inputZipCodeAddress(); addressPage.inputPhoneAddress();
-		 * addressPage.clickSaveButton();
-		 */
-		 
 		
-
-
+		addressPage.inputCityAddress(city);
+		addressPage.inputAddress1(address_1);
+		addressPage.inputZipCodeAddress(zipcode);
+		addressPage.inputPhoneAddress(phoneNumber);
+		addressPage.clickSaveButton();
+		Assert.assertEquals(addressPage.getFirstNameLastName(), firstName +" "+ lastName);
+		Assert.assertEquals(addressPage.getEmail(), "Email:"+" "+emailAddress);
+		Assert.assertEquals(addressPage.getPhoneNumber(), "Phone number:"+" "+phoneNumber);
+		Assert.assertEquals(addressPage.getAddress_1(), address_1);
+		Assert.assertEquals(addressPage.getCityAndZip(), city+", "+zipcode);
+		Assert.assertEquals(addressPage.getCountry(), country);
+		
 	}
 
 	@Test
-	public void Login_03_Email_Not_Found() {
+	public void Testcase_03_Change_Password() {
+		//add -> changepass
+		changePasswordPage=addressPage.openChangePasswordPage(driver);
+		changePasswordPage.inputOldPassword(validPassword);
+		changePasswordPage.inputNewPassword(newPassword);
+		changePasswordPage.inputConfirmNewPassword(newPassword);
+		changePasswordPage.clickNewPassword();
+		Assert.assertTrue(changePasswordPage.isPasswordChangedDisplayed());
+		changePasswordPage.clickClosePasswordChangedMessage();
+		homePage = changePasswordPage.clickToLogoutLink();
+		
 		
 	}
 
