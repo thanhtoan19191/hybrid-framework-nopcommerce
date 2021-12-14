@@ -50,7 +50,8 @@ import pageUIs.nopCommerce.user.ChangePasswordPageUI;
 		}
 
 		public UserHomePageObject clickToLogoutLink() {
-			waitForElementVisible(driver, ChangePasswordPageUI.LOG_OUT_LINK);
+			sleepInsecond(2);
+			waitForElementClickable(driver, ChangePasswordPageUI.LOG_OUT_LINK);
 			clickToElement(driver, ChangePasswordPageUI.LOG_OUT_LINK);
 			return PageGeneratorManager.getUserHomePage(driver);
 			

@@ -20,7 +20,10 @@ import pageObjects.nopCommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopCommerce.user.UserCustomerInForPageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
+import pageUIs.liveGuru.HomePageUI;
+import pageUIs.nopCommerce.user.MyProductReviewPageUI;
 
 public class Testcase_03_My_Account_Testcases extends BaseTest {
 	
@@ -29,13 +32,14 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 	
 	private String firstName, lastName,
 	existingEmail,validPassword,editFirstName,editLastName,dayOfBirth,
-	monthOfBirth,yearOfBirth,editEmail,company,emailAddress,country,city, address_1,zipcode,phoneNumber,newPassword;
+	monthOfBirth,yearOfBirth,editEmail,company,emailAddress,country,city, address_1,zipcode,phoneNumber,newPassword,reviewTitle,reviewText;
 	private UserHomePageObject homePage ;
 	private UserRegisterPageObject registerPage ;
 	private UserLoginPageObject loginPage;
 	private UserCustomerInForPageObject customerInforPage;
 	private UserAddressPageObject addressPage;
 	private UserChangePasswordPageObject changePasswordPage;
+	private UserMyProductReviewPageObject myProductReviewPage;
 	
 	@Parameters("browser")
 	@BeforeClass
@@ -64,6 +68,8 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 		zipcode="550000";
 		phoneNumber="0123456789";
 		newPassword="654321";
+		reviewTitle="lenovo";
+		reviewText="Good product";
 		
 	
 		
@@ -149,30 +155,45 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 		Assert.assertTrue(changePasswordPage.isPasswordChangedDisplayed());
 		changePasswordPage.clickClosePasswordChangedMessage();
 		homePage = changePasswordPage.clickToLogoutLink();
-		
-		
-	}
-
-	@Test
-	public void Login_04_Existing_Email_Empty_Password() {
-		
-
-	}
-
-	@Test
-	public void Login_05_Existing_Email_Incorrect_Password() {
+		loginPage = homePage.clickToLoginLink();
+		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inputToPasswordTextbox(validPassword);
+		loginPage.clickToLoginButton();
+		Assert.assertEquals(loginPage.getErrorMessageUnsuccessfull(),"Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
+		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inputToPasswordTextbox(newPassword);
+		homePage = loginPage.clickToLoginButton();
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
 	}
 
 	@Test
-	public void Login_06_Valid_Email_Password() {
+	public void Testcase_04_My_Product_Review() {
+		homePage.isMyAccountLinkDisplayed();
+		homePage.clickToElement(driver, HomePageUI.COMPUTERS_ICON_MENU);
+		homePage.clickToElement(driver, HomePageUI.DESKTOPS_ICON);
+		homePage.clickToElement(driver, HomePageUI.SELECT_ITEM_ICON);
+		homePage.clickToElement(driver, HomePageUI.ADD_TO_REVIEW);
+		homePage.sendkeyToElement(driver, HomePageUI.REVIEW_TITLE, reviewTitle);
+		homePage.sendkeyToElement(driver, HomePageUI.REVIEW_TEXT, reviewText);
+		homePage.checkToDefaultCheckboxRadio(driver, HomePageUI.GOOD_CHECKBOX_RADIO);
+		homePage.clickToElement(driver, HomePageUI.SUBMIT_REVIEW_BUTTON);
+		homePage.clickToMyAccountLink();
+		myProductReviewPage = homePage.openMyProductReviewPage(driver);
+		Assert.assertEquals(myProductReviewPage.getElementText(driver, MyProductReviewPageUI.REVIEW_TITLE), reviewTitle);
+		Assert.assertEquals(myProductReviewPage.getElementText(driver, MyProductReviewPageUI.REVIEW_TEXT), reviewText);
 		
 		
+		
+		
+
 	}
+
+	
 
 	@AfterClass
 	public void afterClass() {
-		//driver.quit();
+		driver.quit();
 	}
 
 
