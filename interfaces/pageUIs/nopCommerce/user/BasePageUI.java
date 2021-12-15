@@ -6,6 +6,8 @@ public class BasePageUI {
 	public static final String REWARD_POINT_LINK= "Xpath=//div[contains(@class,'account-navigation')]//a[text()='Reward points']";
 	public static final String CUSTOMER_INFOR_LINK= "xpath=//div[contains(@class,'account-navigation')]//a[text()='Customer info']";
 	public static final String CHANGE_PASSWORD_LINK= "xpath=//div[contains(@class,'account-navigation')]//a[text()='Change password']";
+	public static final String DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA= "xpath=//div[contains(@class,'account-navigation')]//a[text()='%s']";
+	
 	public static final String LOGOUT_LINK_AT_USER= "css=a[class='ico-logout']";
 	public static final String LOGOUT_LINK_AT_ADMIN= "xpath=//a[text()='Logout']";
 }
