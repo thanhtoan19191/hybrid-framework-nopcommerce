@@ -43,6 +43,12 @@ public class UserHomePageObject extends BasePage {
 		return null;
 	}
 
+	public UserSearchPageObject openSearchPage() {
+		waitForElementVisible(driver, HomePageUI.SEARCH_FOOTER_LINK);
+		clickToElement(driver, HomePageUI.SEARCH_FOOTER_LINK);
+		return PageGeneratorManager.getUserSearchPage(driver);
+	}
+
 	
 
 	

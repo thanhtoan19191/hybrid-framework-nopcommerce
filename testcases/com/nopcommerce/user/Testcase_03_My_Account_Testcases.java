@@ -32,7 +32,7 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 	
 	private String firstName, lastName,
 	existingEmail,validPassword,editFirstName,editLastName,dayOfBirth,
-	monthOfBirth,yearOfBirth,editEmail,company,emailAddress,country,city, address_1,zipcode,phoneNumber,newPassword,reviewTitle,reviewText;
+	monthOfBirth,yearOfBirth,editEmail,company,emailAddress,country,city, address_1,zipcode,phoneNumber,newPassword,reviewTitle,reviewText,rating;
 	private UserHomePageObject homePage ;
 	private UserRegisterPageObject registerPage ;
 	private UserLoginPageObject loginPage;
@@ -70,6 +70,7 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 		newPassword="654321";
 		reviewTitle="lenovo";
 		reviewText="Good product";
+		rating="width:80%";
 		
 	
 		
@@ -179,9 +180,12 @@ public class Testcase_03_My_Account_Testcases extends BaseTest {
 		homePage.checkToDefaultCheckboxRadio(driver, HomePageUI.GOOD_CHECKBOX_RADIO);
 		homePage.clickToElement(driver, HomePageUI.SUBMIT_REVIEW_BUTTON);
 		homePage.clickToMyAccountLink();
+		
 		myProductReviewPage = homePage.openMyProductReviewPage(driver);
 		Assert.assertEquals(myProductReviewPage.getElementText(driver, MyProductReviewPageUI.REVIEW_TITLE), reviewTitle);
 		Assert.assertEquals(myProductReviewPage.getElementText(driver, MyProductReviewPageUI.REVIEW_TEXT), reviewText);
+		//Assert.assertEquals(myProductReviewPage.getElementAttribute(driver, MyProductReviewPageUI.RATING_REVIEW, "style"),rating);
+		
 		
 		
 		
