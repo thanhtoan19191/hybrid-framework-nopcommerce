@@ -2,19 +2,19 @@
 <suite  name="DataTable">
   <parameter name="url" value="https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/" />
   
-  <!-- <test name="Run on Firefox">
+  <test name="Run on Firefox">
   <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.jquery.datatable.Level_09_Data_Table"/>
      
     </classes>
-  </test>  -->
+  </test> 
   
-   <test name="Run on Chrome">
+  <!--  <test name="Run on Chrome">
   <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.jquery.datatable.Level_09_Data_Table"/>
     </classes>
-  </test> 
+  </test>  -->
   
 </suite> 

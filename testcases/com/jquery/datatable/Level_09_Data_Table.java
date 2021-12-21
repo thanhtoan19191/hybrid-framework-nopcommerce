@@ -35,7 +35,7 @@ public class Level_09_Data_Table extends BaseTest {
 		
 	}
 
-	@Test
+	//@Test
 	public void Table_01_Paging() {
 		//homePage.openPageURL(driver, "https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/");
 		
@@ -46,14 +46,26 @@ public class Level_09_Data_Table extends BaseTest {
 		Assert.assertTrue(homePage.isPageActiveByNumber("5"));
 		
 		homePage.openPageByNumber("20");
-		Assert.assertTrue(homePage.isPageActiveByNumber("15"));
+		Assert.assertTrue(homePage.isPageActiveByNumber("20"));
 		
 		
 	}
 
 	@Test
 	public void Table_02_Actions() {
+		//Input to textbox
+		homePage.inputToHeaderTextboxByName("Famales","434000");
+		homePage.sleepInsecond(3);
 		
+		homePage.inputToHeaderTextboxByName("Males","215000");
+		homePage.sleepInsecond(3);
+		
+		homePage.inputToHeaderTextboxByName("Country","Southern Asia");
+		homePage.sleepInsecond(3);
+		
+		//click to icon
+		
+		//Verify row values
 	}
 
 	
