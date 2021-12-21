@@ -23,7 +23,7 @@ public class BaseTest {
 			throw new RuntimeException("Browser name invalid");
 		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get(GlobalConstants.DATA_TABLE_PAGE_URL);
+		driver.get(GlobalConstants.DATA_TABLE_2_PAGE_URL);
 		
 		return driver;
 	}

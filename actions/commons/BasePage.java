@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -483,6 +484,17 @@ public class BasePage {
 		waitForElementVisible(driver, BasePageUI.LOGOUT_LINK_AT_ADMIN);
 		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_ADMIN);
 		return PageGeneratorManager.getAdminLoginPage(driver);
+	}
+	
+	public void pressKeyToElement(WebDriver driver, String locator, Keys key) {
+		Actions action = new Actions(driver);
+		action.sendKeys(getWebElement(driver, locator), key).perform();
+	}
+	
+	public void pressKeyToElement(WebDriver driver, String locator, Keys key, String...params) {
+		Actions action = new Actions(driver);
+		locator=getDynamicXpath(locator, params);
+		action.sendKeys(getWebElement(driver, locator), key).perform();
 	}
 	
 	private long longTimeout = 30;

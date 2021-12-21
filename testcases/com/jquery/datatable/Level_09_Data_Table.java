@@ -51,24 +51,73 @@ public class Level_09_Data_Table extends BaseTest {
 		
 	}
 
-	@Test
-	public void Table_02_Actions() {
+	//@Test
+	public void Table_02_Input_Header_Textbox() {
 		//Input to textbox
-		homePage.inputToHeaderTextboxByName("Famales","434000");
+		homePage.inputToHeaderTextboxByName("Females","434000");
 		homePage.sleepInsecond(3);
+		homePage.refreshCurrentPage(driver);
 		
 		homePage.inputToHeaderTextboxByName("Males","215000");
 		homePage.sleepInsecond(3);
+		homePage.refreshCurrentPage(driver);
 		
 		homePage.inputToHeaderTextboxByName("Country","Southern Asia");
 		homePage.sleepInsecond(3);
-		
-		//click to icon
-		
-		//Verify row values
+		homePage.refreshCurrentPage(driver);
+	}
+	
+	//@Test
+	public void Table_03_Click_Icon() {
+
+		// click to icon
+		homePage.clickToIconByCountryName("Argentina", "remove");
+		homePage.sleepInsecond(3);
+
+		homePage.clickToIconByCountryName("Algeria", "remove");
+		homePage.sleepInsecond(3);
+
+		homePage.clickToIconByCountryName("Arab Rep of Egypt", "edit");
+		homePage.sleepInsecond(3);
+		homePage.refreshCurrentPage(driver);
+
+		homePage.clickToIconByCountryName("Aruba", "edit");
+		homePage.sleepInsecond(3);
 	}
 
-	
+	//@Test
+	public void Table_04_Verify_Row_Values() {
+		// Verify row values
+		homePage.inputToHeaderTextboxByName("Country", "Argentina");
+		Assert.assertTrue(homePage.isRowValueDisplayed("338282","Argentina","349238","687522"));
+		homePage.sleepInsecond(3);
+		homePage.refreshCurrentPage(driver);
+		
+		homePage.inputToHeaderTextboxByName("Country", "Angola");
+		Assert.assertTrue(homePage.isRowValueDisplayed("276880","Angola","276472","553353"));
+		homePage.sleepInsecond(3);
+		homePage.refreshCurrentPage(driver);
+		
+
+	}
+
+	@Test
+	public void Table_05_Input_To_Row_Textbox() {
+		homePage.inputToTextboxByRowNumber("Contact Person","3","John Kenedy");
+		homePage.sleepInsecond(3);
+		
+		homePage.inputToTextboxByRowNumber("Order Placed","1","5");
+		homePage.sleepInsecond(3);
+		
+		homePage.inputToTextboxByRowNumber("Company","2","Apple");
+		homePage.sleepInsecond(3);
+		
+		homePage.inputToTextboxByRowNumber("Member Since","3","1950");
+		homePage.sleepInsecond(3);
+		
+		
+		
+	}
 
 	
 
