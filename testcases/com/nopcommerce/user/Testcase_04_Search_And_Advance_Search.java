@@ -32,7 +32,8 @@ public class Testcase_04_Search_And_Advance_Search extends BaseTest {
 	private WebDriver driver;
 	
 	private String firstName, lastName,
-	existingEmail,validPassword,inputInvalidDataSearch;
+	existingEmail,validPassword,inputInvalidDataSearch,inputExactlyDataSearch,inputDataSearchParentCategory,
+	inputCategory,inputHPManufactor,inputAppleManufactor,inputRelativeDataSearch;
 	private UserHomePageObject homePage ;
 	private UserRegisterPageObject registerPage ;
 	private UserLoginPageObject loginPage;
@@ -56,7 +57,12 @@ public class Testcase_04_Search_And_Advance_Search extends BaseTest {
 		validPassword = "123456";
 		existingEmail = "auto" + generateFakeNumber() + "@mail.com";
 		inputInvalidDataSearch="Mac Book Pro 2050";
-		
+		inputRelativeDataSearch="Lenovo";
+		inputExactlyDataSearch="Thinkpad X1 Carbon Laptop";
+		inputDataSearchParentCategory="Apple MacBook Pro";
+		inputCategory="Computers";
+		inputHPManufactor="HP";
+		inputAppleManufactor="Apple";
 	
 		
 		
@@ -88,7 +94,7 @@ public class Testcase_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void Search_With_Empty_Data() {
+	public void Testcase_01_Search_With_Empty_Data() {
 		searchPage=homePage.openSearchPage();
 		searchPage.clickSearchButton();
 		Assert.assertEquals(searchPage.getErrorMessageUserPage(), "Search term minimum length is 3 characters");
@@ -97,7 +103,7 @@ public class Testcase_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void Search_With_Invalid_Data() {
+	public void Testcase_02_Search_With_Invalid_Data() {
 		searchPage=homePage.openSearchPage();
 		searchPage.inputDataSearchTextBox(inputInvalidDataSearch);
 		searchPage.clickSearchButton();
@@ -105,21 +111,71 @@ public class Testcase_04_Search_And_Advance_Search extends BaseTest {
 	}
 
 	@Test
-	public void Testcase_03_Change_Password() {
-	
+	public void Testcase_03_Search_With_Relative_Data() {
+		searchPage=homePage.openSearchPage();
+		searchPage.inputDataSearchTextBox(inputRelativeDataSearch);
+		searchPage.clickSearchButton();
+		
+		Assert.assertEquals(searchPage.getProductText(), "Lenovo IdeaCentre 600 All-in-One PC\n$500.00\nADD TO CART Add to compare list Add to wishlist\nLenovo Thinkpad X1 Carbon Laptop\n$1,360.00\nADD TO CART Add to compare list Add to wishlist");
 		
 	}
 
 	@Test
-	public void Testcase_04_My_Product_Review() {
-
+	public void Testcase_04_Search_With_Valid_Data() {
+		searchPage=homePage.openSearchPage();
+		searchPage.inputDataSearchTextBox(inputExactlyDataSearch);
+		searchPage.clickSearchButton();
+		Assert.assertEquals(searchPage.getDataAfterSearch(), "Lenovo Thinkpad X1 Carbon Laptop");
 		
+	}
+	
+	@Test
+	public void Testcase_05_Advance_Search_Parent_Category() {
+		searchPage=homePage.openSearchPage();
+		searchPage.inputDataSearchTextBox(inputDataSearchParentCategory);
+		searchPage.checkAdvanceSearch();
+		searchPage.selectCategoryDropDownList(inputCategory);
+		searchPage.clickSearchButton();
+		Assert.assertEquals(searchPage.getErrorInvalidDataMessageUserPage(), "No products were found that matched your criteria.");
 		
-		
-		
-
 	}
 
+	@Test
+	public void Testcase_06_Advance_Search_Sub_Category() {
+		searchPage=homePage.openSearchPage();
+		searchPage.inputDataSearchTextBox(inputDataSearchParentCategory);
+		searchPage.checkAdvanceSearch();
+		searchPage.selectCategoryDropDownList(inputCategory);
+		searchPage.checkSubCategory();
+		searchPage.clickSearchButton();
+		
+		Assert.assertEquals(searchPage.getProductSubCategory(), "Apple MacBook Pro 13-inch\n$1,800.00\nADD TO CART Add to compare list Add to wishlist");
+		
+	}
+	
+	@Test
+	public void Testcase_07_Advance_Search_Incorrect_Manufacture() {
+		searchPage=homePage.openSearchPage();
+		searchPage.inputDataSearchTextBox(inputDataSearchParentCategory);
+		searchPage.checkAdvanceSearch();
+		searchPage.selectCategoryDropDownList(inputCategory);
+		searchPage.checkSubCategory();
+		searchPage.selectManufactorDropDownList(inputHPManufactor);
+		searchPage.clickSearchButton();
+		Assert.assertEquals(searchPage.getErrorInvalidDataMessageUserPage(), "No products were found that matched your criteria.");
+	}
+	
+	@Test
+	public void Testcase_08_Advance_Search_Correct_Manufacture() {
+		searchPage=homePage.openSearchPage();
+		searchPage.inputDataSearchTextBox(inputDataSearchParentCategory);
+		searchPage.checkAdvanceSearch();
+		searchPage.selectCategoryDropDownList(inputCategory);
+		searchPage.checkSubCategory();
+		searchPage.selectManufactorDropDownList(inputAppleManufactor);
+		searchPage.clickSearchButton();
+		Assert.assertEquals(searchPage.getProductCorrectManufacture(), "Apple MacBook Pro 13-inch\n$1,800.00\nADD TO CART Add to compare list Add to wishlist");
+	}
 	
 
 	@AfterClass
