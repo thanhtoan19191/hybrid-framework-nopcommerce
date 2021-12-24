@@ -1,7 +1,9 @@
 package commons;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -283,7 +285,36 @@ public class BasePage {
 	}
 	
 	public boolean isElementDisplayed(WebDriver driver, String locatorType) {
-		return getWebElement(driver, locatorType).isDisplayed();
+		try {
+			return getWebElement(driver, locatorType).isDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean isElementUndisplayed(WebDriver driver, String locatorType) {
+		System.out.println("Start time=" +new Date().toString());
+		overrideGlobalTimeout(driver, shortTimeout);
+		List<WebElement> elements=getListWebElement(driver, locatorType);
+		overrideGlobalTimeout(driver, longTimeout);
+		
+		if(elements.size()==0) {
+			System.out.println("Element not in DOM");
+			System.out.println("End time=" + new Date().toString());
+			return true;
+		}else if(elements.size()>0 && !elements.get(0).isDisplayed()) {
+			System.out.println("Element in DOM but not visible on UI");
+			System.out.println("End time=" + new Date().toString());
+			return true;
+		}else {
+			System.out.println("Element in DOM and visible on UI");
+			return false;
+		}
+	}
+	
+	public void overrideGlobalTimeout(WebDriver driver,long timeout) {
+		driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
 	}
 	
 	public boolean isElementDisplayed(WebDriver driver, String locatorType,String... dynamicValues) {
@@ -404,12 +435,12 @@ public class BasePage {
 	}
 	
 	public void waitForElementInVisible(WebDriver driver, String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		WebDriverWait explicitWait = new WebDriverWait(driver, shortTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
 	}
 	
 	public void waitForAllElementsInVisible(WebDriver driver, String locatorType) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		WebDriverWait explicitWait = new WebDriverWait(driver, shortTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElement(driver,locatorType)));
 	}
 	

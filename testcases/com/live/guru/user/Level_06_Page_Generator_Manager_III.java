@@ -33,12 +33,12 @@ public class Level_06_Page_Generator_Manager_III extends BaseTest {
 	
 
 	
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String appURL) {
 		
 		
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, appURL);
 		homePage = PageGeneratorManager.getHomePage(driver);
 		
 		firstName = "Toan";
