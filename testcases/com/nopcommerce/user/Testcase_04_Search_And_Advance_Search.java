@@ -43,12 +43,12 @@ public class Testcase_04_Search_And_Advance_Search extends BaseTest {
 	private UserMyProductReviewPageObject myProductReviewPage;
 	private UserSearchPageObject searchPage;
 	
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String appURL) {
 		
 		
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, appURL);
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		

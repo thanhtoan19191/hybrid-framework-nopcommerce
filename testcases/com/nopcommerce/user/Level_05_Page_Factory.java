@@ -27,12 +27,12 @@ public class Level_05_Page_Factory extends BaseTest {
 	private RegisterPageObject registerPage ;
 	private LoginPageObject loginPage;
 	
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String appURL) {
 		
 		
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, appURL);
 		
 		
 		firstName="Automation";

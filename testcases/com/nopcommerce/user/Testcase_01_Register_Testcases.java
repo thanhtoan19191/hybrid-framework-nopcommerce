@@ -26,10 +26,12 @@ public class Testcase_01_Register_Testcases extends BaseTest {
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, emailAddress,password;
 	
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName);
+	public void beforeClass(String browserName, String appURL) {
+		
+		
+		driver = getBrowserDriver(browserName, appURL);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		//homePage = new UserHomePageObject(driver);

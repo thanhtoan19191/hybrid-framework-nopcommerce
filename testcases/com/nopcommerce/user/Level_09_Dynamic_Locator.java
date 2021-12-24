@@ -37,12 +37,12 @@ public class Level_09_Dynamic_Locator extends BaseTest {
 	private UserMyProductReviewPageObject myProductReviewPage ;
 	private UserRewardPointPageObject rewardPointPage ;
 	
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String appURL) {
 		
 		
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, appURL);
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		

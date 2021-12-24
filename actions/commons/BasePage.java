@@ -17,12 +17,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.nopCommerce.admin.AdminLoginPageObject;
+import pageObjects.nopCommerce.admin.AdminProductSearchPageObject;
 import pageObjects.nopCommerce.user.UserAddressPageObject;
 import pageObjects.nopCommerce.user.UserChangePasswordPageObject;
 import pageObjects.nopCommerce.user.UserCustomerInForPageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObjects.nopCommerce.user.UserRewardPointPageObject;
+import pageUIs.nopCommerce.admin.AdminBasePageUI;
 import pageUIs.nopCommerce.user.BasePageUI;
 import pageUIs.nopCommerce.user.CustomerInforPageUI;
 
@@ -160,6 +162,10 @@ public class BasePage {
 		return driver.findElement(getByLocator(locatorType));
 	}
 	
+	private WebElement getWebElement(WebDriver driver, String locatorType, String...params) {
+		return driver.findElement(getByLocator(getDynamicXpath(locatorType, params)));
+	}
+	
 	public void clickToElement(WebDriver driver, String locatorType) {
 		getWebElement(driver, locatorType).click();
 	}
@@ -240,6 +246,10 @@ public class BasePage {
 	
 	public String getElementAttribute(WebDriver driver, String locatorType, String attributeName) {
 		return getWebElement(driver, locatorType).getAttribute(attributeName);
+	}
+	
+	public String getElementAttribute(WebDriver driver, String locatorType, String attributeName, String...params) {
+		return getWebElement(driver, getDynamicXpath(locatorType, params)).getAttribute(attributeName);
 	}
 	
 	public String getElementCssValue(WebDriver driver, String locatorType, String propertyName) {
@@ -413,7 +423,7 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
-	//Tối ưu bài học switch page
+	//Tối ưu bài học switch page User Nopcommerce
 	public UserAddressPageObject openAddressPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.ADDRESS_LINK);
 		clickToElement(driver, BasePageUI.ADDRESS_LINK);
@@ -443,6 +453,7 @@ public class BasePage {
 		clickToElement(driver, BasePageUI.CHANGE_PASSWORD_LINK);
 		return PageGeneratorManager.getUserChangePasswordPage(driver);
 	}
+	
 	
 	//Tối ưu bài học Dynamic locator
 	public BasePage openPagesAtMyAccountByName(WebDriver driver,String pageName ) {
@@ -496,6 +507,31 @@ public class BasePage {
 		locator=getDynamicXpath(locator, params);
 		action.sendKeys(getWebElement(driver, locator), key).perform();
 	}
+	
+	//Admin-nopcommerce
+		public void openSubMenuPageByName(WebDriver driver,String menuPageName, String submenuPageName) {
+			waitForElementClickable(driver, AdminBasePageUI.MENU_LINK_BY_NAME, menuPageName);
+			clickToElement(driver, AdminBasePageUI.MENU_LINK_BY_NAME, menuPageName);
+			waitForElementClickable(driver, AdminBasePageUI.SUB_MENU_LINK_BY_NAME, submenuPageName);
+			clickToElement(driver, AdminBasePageUI.SUB_MENU_LINK_BY_NAME, submenuPageName);
+			
+		}
+		
+		public void uploadMultipleFiles(WebDriver driver,String cardName, String...fileNames) {
+			String filePath=System.getProperty("user.dir")+"\\uploadFiles\\";
+			String fullFileName="";
+			for (String file : fileNames) {
+				fullFileName=fullFileName+filePath+file+"\n";
+			}
+			fullFileName=fullFileName.trim();
+			getWebElement(driver, AdminBasePageUI.UPLOAD_FILE_BY_CARD_NAME, cardName).sendKeys(fullFileName);
+		
+		}
+		
+		public boolean isMessageDisplayedInEmptyTable(WebDriver driver, String tableName) {
+			waitForElementVisible(driver, AdminBasePageUI.NO_DATA_MESSAGE_BY_TABLE_NAME,tableName);
+			return isElementDisplayed(driver, AdminBasePageUI.NO_DATA_MESSAGE_BY_TABLE_NAME,tableName);
+		}
 	
 	private long longTimeout = 30;
 	private long shortTimeout = 5;

@@ -26,7 +26,7 @@ private WebDriver driver;
 	public AdminDashboardPageObject clickToLoginButton() {
 		waitForElementClickable(driver, AdminLoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, AdminLoginPageUI.LOGIN_BUTTON);
-		return PageGeneratorManager.getAdminDashboardPage(driver);
+		return pageObjects.nopCommerce.admin.PageGeneratorManager.getDashboardPage(driver);
 	}
 	
 	public AdminDashboardPageObject loginAsAdmin(String emailAddress, String password) {

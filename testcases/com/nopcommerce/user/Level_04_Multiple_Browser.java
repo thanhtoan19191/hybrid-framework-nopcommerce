@@ -26,12 +26,12 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	
 	private String firstName, lastName, emailAddress,password;
 	
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String appURL) {
 		
 		
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, appURL);
 		
 		
 		

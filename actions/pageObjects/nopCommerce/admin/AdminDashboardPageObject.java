@@ -13,8 +13,12 @@ private WebDriver driver;
 	}
 
 	public boolean isDashboardHeaderDisplayed() {
-		waitForElementVisible(driver, AdminDashboardPageUI.DASHBOARD_HEADER);
-		return isElementDisplayed(driver, AdminDashboardPageUI.DASHBOARD_HEADER);
+		// TODO Auto-generated method stub
+		return false;
 	}
+
+
+
+
 }
 
