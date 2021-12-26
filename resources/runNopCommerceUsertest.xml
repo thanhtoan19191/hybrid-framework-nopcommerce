@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite  name="NopCommerce">
+<suite  name="User-NopCommerce" parallel="tests" thread-count="2">
    <parameter name="url" value="https://demo.nopcommerce.com/"/>
+  
+  <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="commons.MethodListener"/>
+        <!-- <listener class-name="reportConfig.ExtentReportListenerV2"/>
+        <listener class-name="reportConfig.ReportNGListener"/> -->
+</listeners>
+  
+  
   <test name="Run on Firefox">
   <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Testcase_04_Search_And_Advance_Search"/>
-     
+      <class name="com.nopcommerce.user.Level_13_Register_Login_Log_Report"/>
     </classes>
   </test> 
   
   <!--  <test name="Run on Chrome">
   <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.nopcommerce.user.Testcase_03_My_Account_Testcases"/>
+      <class name="com.nopcommerce.user.Level_13_Register_Login_Log_Report"/>
     </classes>
-  </test> 
-   -->
+  </test>  -->
+  
 </suite> 

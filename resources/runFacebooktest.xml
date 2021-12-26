@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite  name="Facebook">
+<listeners>
+	<listener class-name="commons.MethodListener"/>
+</listeners>
+
   <parameter name="url" value="https://www.facebook.com/reg/"/>
   
   <test name="Run on Firefox">

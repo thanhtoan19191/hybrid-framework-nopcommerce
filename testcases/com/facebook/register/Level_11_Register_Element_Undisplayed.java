@@ -37,38 +37,24 @@ public class Level_11_Register_Element_Undisplayed extends BaseTest {
 	}
 
 	@Test
-	public void Register_01_Element_Displayed() {
+	public void Register_01_Verify() {
 		
-		  Assert.assertTrue(registerPage.isEmailTextboxDisplayed());
-		  
-		  registerPage.enterToEmailTextbox("toan@gmail.com");
-		  registerPage.sleepInsecond(3);
-		  Assert.assertTrue(registerPage.isConfirmEmailTextboxDisplayed());
-		 
-		
-	}
+		verifyFalse(registerPage.isEmailTextboxDisplayed());
 
-	@Test
-	public void Register_02_Element_Undisplayed_In_DOM() {
-		
+		registerPage.enterToEmailTextbox("toan@gmail.com");
+		registerPage.sleepInsecond(3);
+		verifyFalse(registerPage.isConfirmEmailTextboxDisplayed());
+
 		registerPage.enterToEmailTextbox("");
 		registerPage.sleepInsecond(3);
-		Assert.assertFalse(registerPage.isConfirmEmailTextboxDisplayed());
-		 
+		verifyFalse(registerPage.isConfirmEmailTextboxDisplayed());
 		
-	}
-	
-	@Test
-	public void Register_03_Element_Undisplayed_Not_In_DOM() {
 		Assert.assertFalse(registerPage.isLoginButtonDisplayed());
 		
-		
+		verifyTrue(registerPage.isLoginButtonUndisplayed());
 	}
+
 	
-	@Test
-	public void Register_04_Element_Undisplayed_Not_In_DOM() {
-		Assert.assertTrue(registerPage.isLoginButtonUndisplayed());
-	}
 
 	
 
