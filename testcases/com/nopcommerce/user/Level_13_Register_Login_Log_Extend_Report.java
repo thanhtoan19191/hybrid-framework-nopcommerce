@@ -52,7 +52,7 @@ public class Level_13_Register_Login_Log_Extend_Report extends BaseTest {
 		firstName="Automation";
 		lastName="FC";
 		validPassword = "123456";
-		emailAddress = "auto" + generateFakeNumber() + "@mail.com";
+		emailAddress = "auto" + generateFakeNumber() + "@gmail.com";
 		
 		
 		
