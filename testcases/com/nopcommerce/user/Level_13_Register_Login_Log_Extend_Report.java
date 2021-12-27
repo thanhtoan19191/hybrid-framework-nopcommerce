@@ -1,5 +1,6 @@
 package com.nopcommerce.user;
 
+import java.lang.reflect.Method;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.LogStatus;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
@@ -22,8 +24,9 @@ import pageObjects.nopCommerce.user.UserLoginPageObject;
 import pageObjects.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
 import pageObjects.nopCommerce.user.UserRewardPointPageObject;
+import reportConfig.ExtentTestManager;
 
-public class Level_13_Register_Login_Log_Report extends BaseTest {
+public class Level_13_Register_Login_Log_Extend_Report extends BaseTest {
 	
 	
 	private WebDriver driver;
@@ -41,7 +44,7 @@ public class Level_13_Register_Login_Log_Report extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName, String appURL) {
 		
-		log.info("Pre-condition - Open browser '" + browserName + "' and navigate to '" + appURL + "'");
+		
 		driver = getBrowserDriver(browserName, appURL);
 		
 		
@@ -58,63 +61,67 @@ public class Level_13_Register_Login_Log_Report extends BaseTest {
 	}
 
 	@Test
-	public void User_01_Register_To_System() {
-		log.info("User_01_Register- Step 01: Verify Home page is displayed");
+	public void User_01_Register_To_System(Method method) {
+		ExtentTestManager.startTest(method.getName(), "User_01_Register_To_System");
+		ExtentTestManager.getTest().log(LogStatus.INFO, "User_01_Register- Step 01: Verify Home page is displayed");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
-		log.info("User_01_Register- Step 02: click to Register link");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 02: click to Register link");
 		registerPage = homePage.clickToRegisterLink();
 		registerPage.sleepInsecond(3);
 
-		log.info("User_01_Register- Step 03: enter to first Name textbox");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 03: enter to first Name textbox");
 		registerPage.inputToFirstnameTextbox(firstName);
 		
-		log.info("User_01_Register- Step 04:  enter to last Name textbox");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 04:  enter to last Name textbox");
 		registerPage.inputToLastnameTextbox(lastName);
 		
-		log.info("User_01_Register- Step 05:  enter to email textbox with value" + emailAddress);
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 05:  enter to email textbox with value" + emailAddress);
 		registerPage.inputToEmailTextbox(emailAddress);
 		
-		log.info("User_01_Register- Step 06:  enter to password textbox with value" + validPassword);
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 06:  enter to password textbox with value" + validPassword);
 		registerPage.inputToPasswordTextbox(validPassword);
 		
-		log.info("User_01_Register- Step 07:  enter to confirm password textbox with value" + validPassword);
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 07:  enter to confirm password textbox with value" + validPassword);
 		registerPage.inputToConfirmPasswordTextbox(validPassword);
 		
-		log.info("User_01_Register- Step 08: click to Register button");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 08: click to Register button");
 		registerPage.clickToRegisterButton();
 		
-		log.info("User_01_Register- Step 09: verify successmessage is displayed");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 09: verify successmessage is displayed");
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(),"Your registration completed");
 		
-		log.info("User_01_Register- Step 10: click to Logout link");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_01_Register- Step 10: click to Logout link");
 		homePage =registerPage.clickToLogoutLink();
 		
-		
+		ExtentTestManager.endTest();
 	}	
 		
 	@Test
-		public void User_02_Login_To_System() {
-		log.info("User_02_Login- Step 01: click to Login link");
+		public void User_02_Login_To_System(Method method) {
+		ExtentTestManager.startTest(method.getName(), "User_02_Login_To_System");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_02_Login- Step 01: click to Login link");
 		loginPage = homePage.clickToLoginLink();
 		
-		log.info("User_02_Login- Step 02: input email textbox");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_02_Login- Step 02: inpuExtentTestManager.getTest().log(LogStatus.INFO,extbox");
 		loginPage.inputToEmailTextbox(emailAddress);
 		
-		log.info("User_02_Login- Step 03: input password textbox");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_02_Login- Step 03: input password textbox");
 		loginPage.inputToPasswordTextbox(validPassword);
 		
-		log.info("User_02_Login- Step 04: click to Login button");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_02_Login- Step 04: click to Login button");
 		homePage = loginPage.clickToLoginButton();
 		
-		log.info("User_02_Login- Step 05: verify my account link is displayed");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_02_Login- Step 05: verify my account link is displayed");
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 
-		log.info("User_02_Login- Step 06: click to my account link");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_02_Login- Step 06: click to my account link");
 		customerInforPage =  homePage.clickToMyAccountLink();
 		
-		log.info("User_02_Login- Step 01: verify page customer infor is displayed");
+		ExtentTestManager.getTest().log(LogStatus.INFO,"User_02_Login- Step 07: verify page customer infor is displayed");
 		verifyFalse(customerInforPage.isCustomerInforPageDisplayed()); 
+		
+		ExtentTestManager.endTest();
 	}
 
 	
@@ -123,7 +130,7 @@ public class Level_13_Register_Login_Log_Report extends BaseTest {
 
 	@AfterClass
 	public void afterClass() {
-		log.info("Post-condition: close browser");
+		
 		driver.quit();
 	}
 

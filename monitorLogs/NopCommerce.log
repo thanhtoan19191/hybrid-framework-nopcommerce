@@ -368,3 +368,66 @@
 [INFO ] [2021-12-26 17:04:08,312] User_02_Login- Step 01: verify page customer infor is displayed
 [INFO ] [2021-12-26 17:04:08,378]  -------------------------- FAILED -------------------------- 
 [INFO ] [2021-12-26 17:04:08,472] Post-condition: close browser
+[INFO ] [2021-12-27 15:24:49,314] ---------- START delete file in folder ----------
+[INFO ] [2021-12-27 15:24:49,317] ---------- END delete file in folder ----------
+[INFO ] [2021-12-27 15:24:49,324] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-27 15:24:56,742] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-27 15:24:56,750] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-27 15:25:01,186] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-27 15:25:01,348] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-27 15:25:01,457] User_01_Register- Step 05:  enter to email textbox with valueauto4066@mail.com
+[INFO ] [2021-12-27 15:25:01,576] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-27 15:25:01,671] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-27 15:25:01,804] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-27 15:25:03,951] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-27 15:25:04,032] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-27 15:25:05,592] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-27 15:25:06,675] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-27 15:25:06,796] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-27 15:25:06,906] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-27 15:25:09,082] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-27 15:25:09,175] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-27 15:25:09,715] User_02_Login- Step 01: verify page customer infor is displayed
+[INFO ] [2021-12-27 15:25:09,814]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-27 15:25:10,034] Post-condition: close browser
+[INFO ] [2021-12-27 16:47:11,087] ---------- START delete file in folder ----------
+[INFO ] [2021-12-27 16:47:11,091] ---------- END delete file in folder ----------
+[INFO ] [2021-12-27 16:47:11,097] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-27 16:47:17,411] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-27 16:47:17,421] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-27 16:47:21,853] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-27 16:47:22,025] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-27 16:47:22,150] User_01_Register- Step 05:  enter to email textbox with valueauto1404@mail.com
+[INFO ] [2021-12-27 16:47:22,292] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-27 16:47:22,424] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-27 16:47:22,541] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-27 16:47:24,836] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-27 16:47:25,043] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-27 16:47:26,763] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-27 16:47:27,520] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-27 16:47:27,736] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-27 16:47:27,898] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-27 16:47:29,558] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-27 16:47:29,645] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-27 16:47:31,262] User_02_Login- Step 01: verify page customer infor is displayed
+[INFO ] [2021-12-27 16:47:31,379]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-27 16:47:31,554] Post-condition: close browser
+[INFO ] [2021-12-27 17:20:57,780] ---------- START delete file in folder ----------
+[INFO ] [2021-12-27 17:20:57,782] ---------- END delete file in folder ----------
+[INFO ] [2021-12-27 17:21:21,380]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-27 17:22:45,121] ---------- START delete file in folder ----------
+[INFO ] [2021-12-27 17:22:45,124] ---------- END delete file in folder ----------
+[INFO ] [2021-12-27 17:22:45,135] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-27 17:22:53,370] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-27 17:22:53,383] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-27 17:22:57,415] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-27 17:22:57,650] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-27 17:22:57,841] User_01_Register- Step 05:  enter to email textbox with valueauto4425@mail.com
+[INFO ] [2021-12-27 17:22:58,039] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-27 17:22:58,225] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-27 17:22:58,419] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-27 17:23:00,770] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-27 17:23:00,862] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-27 17:24:04,771] ---------- START delete file in folder ----------
+[INFO ] [2021-12-27 17:24:04,776] ---------- END delete file in folder ----------
+[INFO ] [2021-12-27 17:24:29,930]  -------------------------- FAILED -------------------------- 

@@ -1,9 +1,14 @@
 package takeSreenshot;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -45,9 +50,7 @@ public class TakeSreenshotTestFailed {
 		Assert.assertEquals(driver.findElement(By.cssSelector("span#ConfirmPassword-error")).getText(),
 				"Password is required.");
 		
-
 	}
-
 	@Test
 	public void TC_02_Register_Invalid_Email() {
 		driver.findElement(By.cssSelector("a.ico-register")).click();
@@ -96,5 +99,9 @@ public class TakeSreenshotTestFailed {
 	public WebDriver getWebDriver() {
 		return this.driver;
 	}
+	
+	
+	
+	 
 
 }

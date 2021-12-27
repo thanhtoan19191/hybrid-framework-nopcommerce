@@ -6,15 +6,15 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
         <listener class-name="commons.MethodListener"/>
-        <!-- <listener class-name="reportConfig.ExtentReportListenerV2"/>
-        <listener class-name="reportConfig.ReportNGListener"/> -->
+        <listener class-name="reportConfig.ExtentTestListener"/>
+        <listener class-name="reportConfig.ReportNGListener"/>
 </listeners>
   
   
   <test name="Run on Firefox">
   <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_13_Register_Login_Log_Report"/>
+      <class name="com.nopcommerce.user.Level_13_Register_Login_Log_Extend_Report"/>
     </classes>
   </test> 
   
