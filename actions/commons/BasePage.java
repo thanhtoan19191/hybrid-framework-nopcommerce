@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,7 @@ import pageObjects.nopCommerce.user.UserRewardPointPageObject;
 import pageUIs.nopCommerce.admin.AdminBasePageUI;
 import pageUIs.nopCommerce.user.BasePageUI;
 import pageUIs.nopCommerce.user.CustomerInforPageUI;
+import pageUIs.nopCommerce.user.RegisterPageUI;
 
 public class BasePage {
 
@@ -46,6 +48,16 @@ public class BasePage {
 
 	public String getPageUrl(WebDriver driver) {
 		return driver.getCurrentUrl();
+	}
+	
+	public Set<Cookie> getAllCookies(WebDriver driver) {
+		return driver.manage().getCookies();
+	}
+	
+	public void setAllCookies(WebDriver driver, Set<Cookie> allCookies) {
+		for (Cookie cookie : allCookies) {
+			driver.manage().addCookie(cookie);
+		}
 	}
 
 	public String getPageSourceCode(WebDriver driver) {
@@ -200,6 +212,8 @@ public class BasePage {
 		Select select = new Select(getWebElement(driver, locatorType));
 		select.selectByVisibleText(textItem);
 	}
+	
+
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem, String... dynamicValues) {
 		Select select = new Select(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
@@ -562,6 +576,31 @@ public class BasePage {
 		public boolean isMessageDisplayedInEmptyTable(WebDriver driver, String tableName) {
 			waitForElementVisible(driver, AdminBasePageUI.NO_DATA_MESSAGE_BY_TABLE_NAME,tableName);
 			return isElementDisplayed(driver, AdminBasePageUI.NO_DATA_MESSAGE_BY_TABLE_NAME,tableName);
+		}
+		
+		public void enterToTextboxByID(WebDriver driver,String textboxID, String value) {
+			waitForElementVisible(driver, AdminBasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+			sendkeyToElement(driver, AdminBasePageUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+			
+		}
+		
+		public void openHeaderPageByName(WebDriver driver,String pageName) {
+			waitForElementClickable(driver, AdminBasePageUI.DYNAMIC_PAGE_HEADER, pageName);
+			clickToElement(driver, AdminBasePageUI.DYNAMIC_PAGE_HEADER, pageName);
+		}
+		
+		public void clickToRadioButtonByID(WebDriver driver, String radioButtonID) {
+			waitForElementClickable(driver, AdminBasePageUI.DYNAMIC_RADIO_BY_ID, radioButtonID);
+			clickToElement(driver, AdminBasePageUI.DYNAMIC_RADIO_BY_ID, radioButtonID);
+		}
+		
+		public void selectDropdownByName(WebDriver driver, String dropdownName, String itemtext) {
+			selectItemInDefaultDropdown(driver, AdminBasePageUI.DYNAMIC_DROPDOWN_BY_NAME, itemtext, dropdownName);
+		}
+		
+		public void clickToButtonByText(WebDriver driver,String buttonText) {
+			waitForElementClickable(driver, AdminBasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+			clickToElement(driver, AdminBasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
 		}
 	
 	private long longTimeout = 30;

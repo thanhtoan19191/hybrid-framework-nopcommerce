@@ -47,6 +47,12 @@ public class UserLoginPageObject extends BasePage{
 		return clickToLoginButton();
 	}
 
+	public UserHomePageObject openHomePage() {
+		waitForElementClickable(driver, LoginPageUI.HOMEPAGE_IMG);
+		clickToElement(driver, LoginPageUI.HOMEPAGE_IMG);
+		return PageGeneratorManager.getUserHomePage(driver);
+	}
+
 	
 
 
