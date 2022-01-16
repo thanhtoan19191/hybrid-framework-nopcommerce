@@ -120,11 +120,11 @@ public class Level_13_Register_Login_Log_ReportNG extends BaseTest {
 	
 
 	
-
-	@AfterClass
-	public void afterClass() {
-		log.info("Post-condition: close browser");
-		driver.quit();
+	@Parameters({"browser"})
+	@AfterClass(alwaysRun = true)
+	public void afterClass(String browserName) {
+		log.info("Post-condition: close browser" + browserName +"");
+		cleanDriverInstance();
 	}
 
 

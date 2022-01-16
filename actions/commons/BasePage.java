@@ -201,11 +201,11 @@ public class BasePage {
 	}
 	
 	public String getElementText(WebDriver driver, String locatorType) {
-		return getWebElement(driver, locatorType).getText();
+		return getWebElement(driver, locatorType).getText().trim();
 	}
 	
 	public String getElementText(WebDriver driver, String locatorType, String... dynamicValues) {
-		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).getText();
+		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).getText().trim();
 	}
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem) {
@@ -223,6 +223,12 @@ public class BasePage {
 
 	
 	public String getSelectedItemDefaultDropdown(WebDriver driver, String locatorType) {
+		Select select = new Select(getWebElement(driver, locatorType));
+		return select.getFirstSelectedOption().getText();
+	}
+	
+	public String getSelectedItemDefaultDropdown(WebDriver driver, String locatorType, String ...params) {
+		locatorType=getDynamicXpath(locatorType, params);
 		Select select = new Select(getWebElement(driver, locatorType));
 		return select.getFirstSelectedOption().getText();
 	}
@@ -291,6 +297,13 @@ public class BasePage {
 		}
 	}
 	
+	public void checkToDefaultCheckboxRadio(WebDriver driver, String locatorType, String...params) {
+		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, params));
+		if (!element.isSelected()) {
+			element.click();
+		}
+	}
+	
 	public void uncheckToDefaultCheckboxRadio(WebDriver driver, String locatorType) {
 		WebElement element = getWebElement(driver, locatorType);
 		if (element.isSelected()) {
@@ -354,6 +367,11 @@ public class BasePage {
 	public void hoverMouseToElement(WebDriver driver, String locatorType) {
 		Actions action = new Actions(driver);
 		action.moveToElement(getWebElement(driver, locatorType)).perform();
+	}
+	
+	public void hoverMouseToElement(WebDriver driver, String locatorType, String... dynamicValues ) {
+		Actions action = new Actions(driver);
+		action.moveToElement(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues))).perform();
 	}
 
 
@@ -602,7 +620,76 @@ public class BasePage {
 			waitForElementClickable(driver, AdminBasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
 			clickToElement(driver, AdminBasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
 		}
+		
+		//HRM: Menu
+		public void openMenuPage(WebDriver driver, String menuPageName) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, menuPageName);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, menuPageName);
+		}
+		
+		// submenu
+		public void openSubMenuPage(WebDriver driver, String menuPageName, String subMenuPageName) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, menuPageName);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, menuPageName);
+			
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, subMenuPageName);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, subMenuPageName);
+		}
+		
+		// childsubmenu
+		public void openChildSubMenuPage(WebDriver driver, String menuPageName, String subMenuPageName, String childSubMenuPageName) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, menuPageName);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, menuPageName);
+			
+			waitForElementVisible(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, subMenuPageName);
+			hoverMouseToElement(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, subMenuPageName);
+			
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, childSubMenuPageName);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.DYNAMIC_MENU_PAGE, childSubMenuPageName);
+		}
+		
+		public void clickToButtonByID(WebDriver driver, String ButtonIDName) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.BUTTON_BY_ID, ButtonIDName);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.BUTTON_BY_ID, ButtonIDName);
+		}
+		
+		//enter textbox component
+		public void enterToTextBoxByID(WebDriver driver, String textBoxIDName, String value) {
+			waitForElementVisible(driver, pageUIs.hrm.BasePageUI.TEXTBOX_BY_ID, textBoxIDName);
+			sendkeyToElement(driver, pageUIs.hrm.BasePageUI.TEXTBOX_BY_ID, value, textBoxIDName);
+		}
+		
+		//Get textbox value component
+		public String getTextboxValueByID(WebDriver driver, String textBoxIDName) {
+			waitForElementVisible(driver, pageUIs.hrm.BasePageUI.TEXTBOX_BY_ID, textBoxIDName);
+			return getElementAttribute(driver, pageUIs.hrm.BasePageUI.TEXTBOX_BY_ID, "value", textBoxIDName);
+		}
+		
+		//Dropdown
+		public void selectItemInDropdownByID(WebDriver driver,String dropdownID, String valueItem ) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.DROPDOWN_BY_ID, dropdownID);
+			selectItemInDefaultDropdown(driver, pageUIs.hrm.BasePageUI.DROPDOWN_BY_ID, valueItem, dropdownID);
+		}
+		
+		//Get Dropdown selected value
+		public String getSelectedValueInDropdownByID(WebDriver driver,String dropdownID ) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.DROPDOWN_BY_ID, dropdownID);
+			return getSelectedItemDefaultDropdown(driver, pageUIs.hrm.BasePageUI.DROPDOWN_BY_ID, dropdownID);
+		}
 	
+		
+		public void clickToCheckboxByLabel(WebDriver driver,String checkboxLabelName) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.CHECKBOX_BY_LABEL, checkboxLabelName);
+			checkToDefaultCheckboxRadio(driver, pageUIs.hrm.BasePageUI.CHECKBOX_BY_LABEL, checkboxLabelName);
+		}
+		
+		public String getValueInTableIDAtColumnNameAndRowIndex(WebDriver driver,String tableID, String headerName, String rowIndex) {
+			int columnIndex = getElementSize(driver, pageUIs.hrm.BasePageUI.TABLE_HEADER_BY_ID_AND_NAME, tableID,headerName)+1;
+			waitForElementVisible(driver, pageUIs.hrm.BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID,rowIndex, String.valueOf(columnIndex));
+			return getElementText(driver, pageUIs.hrm.BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID,rowIndex,String.valueOf(columnIndex));
+		}
+		
+		
 	private long longTimeout = 30;
 	private long shortTimeout = 5;
 }

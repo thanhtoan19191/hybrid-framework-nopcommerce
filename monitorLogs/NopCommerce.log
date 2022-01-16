@@ -431,3 +431,309 @@
 [INFO ] [2021-12-27 17:24:04,771] ---------- START delete file in folder ----------
 [INFO ] [2021-12-27 17:24:04,776] ---------- END delete file in folder ----------
 [INFO ] [2021-12-27 17:24:29,930]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-28 15:17:59,912] ---------- START delete file in folder ----------
+[INFO ] [2021-12-28 15:17:59,914] ---------- END delete file in folder ----------
+[INFO ] [2021-12-28 15:18:06,341] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-28 15:18:06,346] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-28 15:18:10,913] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-28 15:18:11,030] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-28 15:18:11,112] User_01_Register- Step 05:  enter to email textbox with valueauto7362@gmail.com
+[INFO ] [2021-12-28 15:18:11,195] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-28 15:18:11,296] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-28 15:18:11,404] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-28 15:18:13,716] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-28 15:18:13,770] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-28 15:18:15,420] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-28 15:18:16,582] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-28 15:18:16,664] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-28 15:18:16,736] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-28 15:18:19,103] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-28 15:18:19,184] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-28 15:18:20,487] User_02_Login- Step 07: verify page customer infor is displayed
+[INFO ] [2021-12-28 15:18:20,548]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-28 16:00:46,803] ---------- START delete file in folder ----------
+[INFO ] [2021-12-28 16:00:46,804] ---------- END delete file in folder ----------
+[INFO ] [2021-12-28 16:00:52,788] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-28 16:00:52,794] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-28 16:00:57,249] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-28 16:00:57,373] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-28 16:00:57,477] User_01_Register- Step 05:  enter to email textbox with valueauto1684@gmail.com
+[INFO ] [2021-12-28 16:00:57,559] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-28 16:00:57,655] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-28 16:00:57,742] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-28 16:00:59,580] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-28 16:00:59,629] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-28 16:01:01,181] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-28 16:01:02,404] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-28 16:01:02,495] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-28 16:01:02,577] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-28 16:01:03,428] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-28 16:01:03,517] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-28 16:01:04,045] User_02_Login- Step 07: verify page customer infor is displayed
+[INFO ] [2021-12-28 16:01:04,126]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-28 16:05:27,307] ---------- START delete file in folder ----------
+[INFO ] [2021-12-28 16:05:27,308] ---------- END delete file in folder ----------
+[INFO ] [2021-12-28 16:05:33,174] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-28 16:05:33,177] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-28 16:05:38,023] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-28 16:05:38,116] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-28 16:05:38,204] User_01_Register- Step 05:  enter to email textbox with valueauto1749@gmail.com
+[INFO ] [2021-12-28 16:05:38,286] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-28 16:05:38,368] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-28 16:05:38,474] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-28 16:05:39,967] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-28 16:05:40,018] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-28 16:05:41,537] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-28 16:05:41,990] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-28 16:05:42,075] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-28 16:05:42,169] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-28 16:05:43,635] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-28 16:05:43,723] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-28 16:05:45,023] User_02_Login- Step 07: verify page customer infor is displayed
+[INFO ] [2021-12-28 16:05:45,089]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-28 17:39:36,691] ---------- START delete file in folder ----------
+[INFO ] [2021-12-28 17:39:36,693] ---------- END delete file in folder ----------
+[INFO ] [2021-12-28 17:39:43,435] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-28 17:39:43,438] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-28 17:39:47,969] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-28 17:39:48,065] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-28 17:39:48,155] User_01_Register- Step 05:  enter to email textbox with valueauto3434@gmail.com
+[INFO ] [2021-12-28 17:39:48,248] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-28 17:39:48,337] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-28 17:39:48,426] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-28 17:39:50,402] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-28 17:39:50,449] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-28 17:39:51,866] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-28 17:39:52,348] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-28 17:39:52,464] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-28 17:39:52,576] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-28 17:39:54,128] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-28 17:39:54,210] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-28 17:39:54,707] User_02_Login- Step 07: verify page customer infor is displayed
+[INFO ] [2021-12-28 17:39:54,768]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-28 18:02:31,177] ---------- START delete file in folder ----------
+[INFO ] [2021-12-28 18:02:31,179] ---------- END delete file in folder ----------
+[INFO ] [2021-12-28 18:02:37,400] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-28 18:02:37,403] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-28 18:02:41,897] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-28 18:02:41,988] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-28 18:02:42,075] User_01_Register- Step 05:  enter to email textbox with valueauto7698@gmail.com
+[INFO ] [2021-12-28 18:02:42,158] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-28 18:02:42,248] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-28 18:02:42,340] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-28 18:02:44,874] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-28 18:02:44,928] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-28 18:02:47,335] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-28 18:02:48,501] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-28 18:02:48,587] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-28 18:02:48,660] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-28 18:02:50,363] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-28 18:02:50,424] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-28 18:02:50,917] User_02_Login- Step 07: verify page customer infor is displayed
+[INFO ] [2021-12-28 18:02:50,983]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-29 17:49:50,165] ---------- START delete file in folder ----------
+[INFO ] [2021-12-29 17:49:50,166] ---------- END delete file in folder ----------
+[INFO ] [2021-12-29 17:49:50,173] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-29 17:49:57,090] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-29 17:49:57,092] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-29 17:50:01,758] User_01_Register- Step 03: enter to first Name textbox
+[INFO ] [2021-12-29 17:50:01,857] User_01_Register- Step 04:  enter to last Name textbox
+[INFO ] [2021-12-29 17:50:01,942] User_01_Register- Step 05:  enter to email textbox with valueauto6755@mail.com
+[INFO ] [2021-12-29 17:50:02,031] User_01_Register- Step 06:  enter to password textbox with value123456
+[INFO ] [2021-12-29 17:50:02,117] User_01_Register- Step 07:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-29 17:50:02,218] User_01_Register- Step 08: click to Register button
+[INFO ] [2021-12-29 17:50:04,502] User_01_Register- Step 09: verify successmessage is displayed
+[INFO ] [2021-12-29 17:50:04,590] User_01_Register- Step 10: click to Logout link
+[INFO ] [2021-12-29 17:50:05,581] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-29 17:50:06,850] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-29 17:50:06,936] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-29 17:50:07,014] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-29 17:50:08,496] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-29 17:50:08,571] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-29 17:50:09,056] User_02_Login- Step 07: verify page customer infor is displayed
+[INFO ] [2021-12-29 17:50:09,134]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-29 17:50:09,245] Post-condition: close browserfirefox
+[INFO ] [2021-12-29 17:50:09,245] OS name = windows 10
+[INFO ] [2021-12-29 17:50:09,245] Driver instance name = windows 10
+[INFO ] [2021-12-30 15:40:04,856] ---------- START delete file in folder ----------
+[INFO ] [2021-12-30 15:40:04,859] ---------- END delete file in folder ----------
+[INFO ] [2021-12-30 15:40:04,866] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-30 15:40:11,365] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 15:40:11,366] OS name = windows 10
+[INFO ] [2021-12-30 15:40:11,366] Driver instance name = windows 10
+[INFO ] [2021-12-30 15:41:40,550] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 15:41:40,551] OS name = windows 10
+[INFO ] [2021-12-30 15:41:40,551] 
+[INFO ] [2021-12-30 15:45:44,860] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-30 15:45:49,925] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-30 15:45:50,005] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 15:45:50,005] OS name = windows 10
+[INFO ] [2021-12-30 15:45:50,005] Driver instance name = windows 10
+[INFO ] [2021-12-30 15:46:32,586] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-30 15:46:37,638] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-30 15:46:37,699] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 15:46:37,699] OS name = windows 10
+[INFO ] [2021-12-30 15:46:37,699] Driver instance name = windows 10
+[INFO ] [2021-12-30 15:48:47,530] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-30 15:48:52,755] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-30 15:48:54,021] User_02_Login- Step 02: Set login page cookie
+[INFO ] [2021-12-30 15:49:00,558] User_02_Login- Step 03: verify my account link is displayed
+[INFO ] [2021-12-30 15:49:00,657] User_02_Login- Step 04: click to my account link
+[INFO ] [2021-12-30 15:49:01,918] User_02_Login- Step 05: verify page customer infor is displayed
+[INFO ] [2021-12-30 15:49:01,975]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-30 15:49:02,027] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 15:49:02,027] OS name = windows 10
+[INFO ] [2021-12-30 15:49:02,027] Driver instance name = windows 10
+[INFO ] [2021-12-30 15:50:38,746] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-30 15:50:43,939] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-30 15:50:45,160] User_02_Login- Step 02: Set login page cookie
+[INFO ] [2021-12-30 15:50:51,649] User_02_Login- Step 03: verify my account link is displayed
+[INFO ] [2021-12-30 15:50:51,729] User_02_Login- Step 04: click to my account link
+[INFO ] [2021-12-30 15:50:52,945] User_02_Login- Step 05: verify page customer infor is displayed
+[INFO ] [2021-12-30 15:50:53,002]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-12-30 15:50:53,057] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 15:50:53,057] OS name = windows 10
+[INFO ] [2021-12-30 15:50:53,057] Driver instance name = windows 10
+[INFO ] [2021-12-30 15:51:49,389] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-30 15:51:54,143] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-30 15:51:55,376] User_02_Login- Step 02: Set login page cookie
+[INFO ] [2021-12-30 15:52:01,821] User_02_Login- Step 03: verify my account link is displayed
+[INFO ] [2021-12-30 15:52:01,890] User_02_Login- Step 04: click to my account link
+[INFO ] [2021-12-30 15:52:03,008] User_02_Login- Step 05: verify page customer infor is displayed
+[INFO ] [2021-12-30 15:52:03,089]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-12-30 15:52:03,140] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 15:52:03,140] OS name = windows 10
+[INFO ] [2021-12-30 15:52:03,140] Driver instance name = windows 10
+[INFO ] [2021-12-30 16:10:25,233] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-30 16:10:30,375] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-30 16:10:30,949] User_02_Login- Step 02: Set login page cookie
+[INFO ] [2021-12-30 16:10:38,930] User_02_Login- Step 03: verify my account link is displayed
+[INFO ] [2021-12-30 16:10:39,022] User_02_Login- Step 04: click to my account link
+[INFO ] [2021-12-30 16:10:39,480] User_02_Login- Step 05: verify page customer infor is displayed
+[INFO ] [2021-12-30 16:10:39,552]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-12-30 16:10:39,603] Post-condition: close browserfirefox
+[INFO ] [2021-12-30 16:10:39,603] OS name = windows 10
+[INFO ] [2021-12-30 16:10:39,603] Driver instance name = windows 10
+[INFO ] [2021-12-31 17:40:58,146] ---------- START delete file in folder ----------
+[INFO ] [2021-12-31 17:40:58,150] ---------- END delete file in folder ----------
+[INFO ] [2021-12-31 17:40:58,157] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-31 17:41:05,296] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-31 17:41:05,298] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-31 17:41:09,616] User_01_Register- Step 03: select male radio button
+[INFO ] [2021-12-31 17:41:09,914] User_01_Register- Step 04: enter to first Name textbox
+[INFO ] [2021-12-31 17:41:10,007] User_01_Register- Step 05:  enter to last Name textbox
+[INFO ] [2021-12-31 17:41:10,092] User_01_Register- Step 06:  enter to email textbox with valueauto5854@mail.com
+[INFO ] [2021-12-31 17:41:10,172] User_01_Register- Step 07:  enter to password textbox with value123456
+[INFO ] [2021-12-31 17:41:10,267] User_01_Register- Step 08:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-31 17:41:10,354] User_01_Register- Step 09:  select item in date dropdown
+[INFO ] [2021-12-31 17:41:30,432] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-31 17:41:31,507] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-31 17:41:32,220] Post-condition: close browserfirefox
+[INFO ] [2021-12-31 17:41:32,220] OS name = windows 10
+[INFO ] [2021-12-31 17:41:32,220] Driver instance name = windows 10
+[INFO ] [2021-12-31 17:41:32,239] Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-J8A4CDQ', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211218203254, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 15936, moz:profile: C:\Users\Toan Nguyen\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 3fe2b5b2-0530-4d24-95da-2336d96e0caa
+[INFO ] [2021-12-31 17:41:42,242] ---------- START delete file in folder ----------
+[INFO ] [2021-12-31 17:41:42,243] ---------- END delete file in folder ----------
+[INFO ] [2021-12-31 17:41:42,250] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-31 17:41:48,521] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-31 17:41:48,523] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-31 17:41:52,991] User_01_Register- Step 03: select male radio button
+[INFO ] [2021-12-31 17:41:53,260] User_01_Register- Step 04: enter to first Name textbox
+[INFO ] [2021-12-31 17:41:53,352] User_01_Register- Step 05:  enter to last Name textbox
+[INFO ] [2021-12-31 17:41:53,441] User_01_Register- Step 06:  enter to email textbox with valueauto5461@mail.com
+[INFO ] [2021-12-31 17:41:53,523] User_01_Register- Step 07:  enter to password textbox with value123456
+[INFO ] [2021-12-31 17:41:53,599] User_01_Register- Step 08:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-31 17:41:53,676] User_01_Register- Step 09:  select item in date dropdown
+[INFO ] [2021-12-31 17:42:13,750] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-31 17:42:14,886] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-31 17:42:14,975] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-31 17:42:15,053] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-31 17:42:16,239] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-31 17:42:42,807] Post-condition: close browserfirefox
+[INFO ] [2021-12-31 17:42:42,807] OS name = windows 10
+[INFO ] [2021-12-31 17:42:42,807] Driver instance name = windows 10
+[INFO ] [2021-12-31 17:42:43,429] Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-J8A4CDQ', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211218203254, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 13316, moz:profile: C:\Users\Toan Nguyen\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4a0254a6-ac4d-48c3-9395-8feaf006daf3
+[INFO ] [2021-12-31 17:45:11,235] ---------- START delete file in folder ----------
+[INFO ] [2021-12-31 17:45:11,237] ---------- END delete file in folder ----------
+[INFO ] [2021-12-31 17:45:11,245] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-31 17:45:16,702] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-31 17:45:16,704] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-31 17:45:21,176] User_01_Register- Step 03: select male radio button
+[INFO ] [2021-12-31 17:45:21,461] User_01_Register- Step 04: enter to first Name textbox
+[INFO ] [2021-12-31 17:45:21,565] User_01_Register- Step 05:  enter to last Name textbox
+[INFO ] [2021-12-31 17:45:21,639] User_01_Register- Step 06:  enter to email textbox with valueauto9635@mail.com
+[INFO ] [2021-12-31 17:45:21,722] User_01_Register- Step 07:  enter to password textbox with value123456
+[INFO ] [2021-12-31 17:45:21,800] User_01_Register- Step 08:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-31 17:45:21,875] User_01_Register- Step 09:  select item in date dropdown
+[INFO ] [2021-12-31 17:45:41,942] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-31 17:45:43,117] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-31 17:45:43,200] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-31 17:45:43,277] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-31 17:45:44,426] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-31 17:46:24,997] Post-condition: close browserfirefox
+[INFO ] [2021-12-31 17:46:24,997] OS name = windows 10
+[INFO ] [2021-12-31 17:46:24,997] Driver instance name = windows 10
+[INFO ] [2021-12-31 17:47:15,841] ---------- START delete file in folder ----------
+[INFO ] [2021-12-31 17:47:15,842] ---------- END delete file in folder ----------
+[INFO ] [2021-12-31 17:47:15,849] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-31 17:47:21,875] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-31 17:47:21,878] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-31 17:47:26,156] User_01_Register- Step 03: select male radio button
+[INFO ] [2021-12-31 17:47:26,440] User_01_Register- Step 04: enter to first Name textbox
+[INFO ] [2021-12-31 17:47:26,529] User_01_Register- Step 05:  enter to last Name textbox
+[INFO ] [2021-12-31 17:47:26,606] User_01_Register- Step 06:  enter to email textbox with valueauto3145@mail.com
+[INFO ] [2021-12-31 17:47:26,689] User_01_Register- Step 07:  enter to password textbox with value123456
+[INFO ] [2021-12-31 17:47:26,767] User_01_Register- Step 08:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-31 17:47:26,850] User_01_Register- Step 09:  select item in date dropdown
+[INFO ] [2021-12-31 17:47:46,938] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-31 17:47:48,726] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-31 17:47:48,816] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-31 17:47:48,892] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-31 17:47:50,715] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-31 17:48:12,831] Post-condition: close browserfirefox
+[INFO ] [2021-12-31 17:48:12,831] OS name = windows 10
+[INFO ] [2021-12-31 17:48:12,831] Driver instance name = windows 10
+[INFO ] [2021-12-31 17:48:13,386] Failed to decode response from marionette
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-J8A4CDQ', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 95.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20211218203254, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 18868, moz:profile: C:\Users\Toan Nguyen\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 88237119-f6d0-483c-9bf8-171111a09b6e
+[INFO ] [2021-12-31 17:49:48,863] ---------- START delete file in folder ----------
+[INFO ] [2021-12-31 17:49:48,865] ---------- END delete file in folder ----------
+[INFO ] [2021-12-31 17:49:48,872] Pre-condition - Open browser 'firefox' and navigate to 'https://demo.nopcommerce.com/'
+[INFO ] [2021-12-31 17:49:54,965] User_01_Register- Step 01: Verify Home page is displayed
+[INFO ] [2021-12-31 17:49:54,967] User_01_Register- Step 02: click to Register link
+[INFO ] [2021-12-31 17:49:58,645] User_01_Register- Step 03: select male radio button
+[INFO ] [2021-12-31 17:49:58,928] User_01_Register- Step 04: enter to first Name textbox
+[INFO ] [2021-12-31 17:49:59,017] User_01_Register- Step 05:  enter to last Name textbox
+[INFO ] [2021-12-31 17:49:59,121] User_01_Register- Step 06:  enter to email textbox with valueauto8175@mail.com
+[INFO ] [2021-12-31 17:49:59,207] User_01_Register- Step 07:  enter to password textbox with value123456
+[INFO ] [2021-12-31 17:49:59,284] User_01_Register- Step 08:  enter to confirm password textbox with value123456
+[INFO ] [2021-12-31 17:49:59,359] User_01_Register- Step 09:  select item in date dropdown
+[INFO ] [2021-12-31 17:49:59,632] User_01_Register- Step 10:  select item in month dropdown
+[INFO ] [2021-12-31 17:49:59,916] User_01_Register- Step 11:  select item in year dropdown
+[INFO ] [2021-12-31 17:50:00,212] User_01_Register- Step 12: click to Register button
+[INFO ] [2021-12-31 17:50:02,201] User_01_Register- Step 13: verify successmessage is displayed
+[INFO ] [2021-12-31 17:50:02,258] User_01_Register- Step 14: click to Logout link
+[INFO ] [2021-12-31 17:50:03,833] User_02_Login- Step 01: click to Login link
+[INFO ] [2021-12-31 17:50:04,870] User_02_Login- Step 02: input email textbox
+[INFO ] [2021-12-31 17:50:04,952] User_02_Login- Step 03: input password textbox
+[INFO ] [2021-12-31 17:50:05,032] User_02_Login- Step 04: click to Login button
+[INFO ] [2021-12-31 17:50:07,268] User_02_Login- Step 05: verify my account link is displayed
+[INFO ] [2021-12-31 17:50:07,348] User_02_Login- Step 06: click to my account link
+[INFO ] [2021-12-31 17:50:08,436] User_02_Login- Step 07: verify page customer infor is displayed
+[INFO ] [2021-12-31 17:50:08,509]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-12-31 17:50:08,513] Post-condition: close browserfirefox
+[INFO ] [2021-12-31 17:50:08,513] OS name = windows 10
+[INFO ] [2021-12-31 17:50:08,513] Driver instance name = windows 10
