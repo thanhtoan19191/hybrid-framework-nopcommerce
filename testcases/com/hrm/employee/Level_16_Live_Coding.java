@@ -82,13 +82,13 @@ public class Level_16_Live_Coding extends BaseTest {
 		addEmployeePage.clickToCheckboxByLabel(driver, "Create Login Details");;
 		
 		log.info("Add_New -Step 07: Enter UserName textbox ");
-		addEmployeePage.enterToTextBoxByID(driver, "user_name", "automationfc");
+		addEmployeePage.enterToTextBoxByID(driver, "user_name", "automationfc3");
 		
 		log.info("Add_New -Step 08: Enter Password textbox ");
-		addEmployeePage.enterToTextBoxByID(driver, "user_password", "automationfc");
+		addEmployeePage.enterToTextBoxByID(driver, "user_password", "Admin@123!#");
 		
 		log.info("Add_New -Step 09: Enter Confirm Password textbox ");
-		addEmployeePage.enterToTextBoxByID(driver, "re_password", "automationfc");
+		addEmployeePage.enterToTextBoxByID(driver, "re_password", "Admin@123!#");
 		
 		log.info("Add_New -Step 10: Select Enable value in Status Dropdown");
 		addEmployeePage.selectItemInDropdownByID(driver, "status", statusValue);
@@ -102,10 +102,13 @@ public class Level_16_Live_Coding extends BaseTest {
 		employeeListPage=PageGenerator.getEmployeeListPage(driver);
 		
 		log.info("Add_New -Step 13: Enter valid infor to Employee Name textbox");
+		employeeListPage.sleepInsecond(5);
 		employeeListPage.enterToTextBoxByID(driver, "empsearch_employee_name_empName", "Automation FC");
+		employeeListPage.sleepInsecond(5);
 		
 		log.info("Add_New -Step 14: Click Search button");
 		employeeListPage.clickToButtonByID(driver, "searchBtn");
+		employeeListPage.sleepInsecond(5);
 		
 		log.info("Add_New -Step 15: Verify employee information displayed at result table");
 		//verifyTrue(employeeListPage.isValueDisplayedInTableIDAtColumnNameAndRowIndex("resultTable","Last Name","1","Anderson"));
