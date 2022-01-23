@@ -19,6 +19,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.hrm.DashboardPageObject;
+import pageObjects.hrm.LoginPageObject;
+import pageObjects.hrm.PageGenerator;
 import pageObjects.nopCommerce.admin.AdminLoginPageObject;
 import pageObjects.nopCommerce.admin.AdminProductSearchPageObject;
 import pageObjects.nopCommerce.user.UserAddressPageObject;
@@ -27,6 +30,7 @@ import pageObjects.nopCommerce.user.UserCustomerInForPageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObjects.nopCommerce.user.UserRewardPointPageObject;
+import pageUIs.hrm.MyInforPageUI;
 import pageUIs.nopCommerce.admin.AdminBasePageUI;
 import pageUIs.nopCommerce.user.BasePageUI;
 import pageUIs.nopCommerce.user.CustomerInforPageUI;
@@ -168,15 +172,15 @@ public class BasePage {
 		return locatorType;
 	}
 	
-	private List<WebElement> getListWebElement(WebDriver driver, String locatorType) {
+	public List<WebElement> getListWebElement(WebDriver driver, String locatorType) {
 		return driver.findElements(getByLocator(locatorType));
 	}
 	
-	private WebElement getWebElement(WebDriver driver, String locatorType) {
+	public WebElement getWebElement(WebDriver driver, String locatorType) {
 		return driver.findElement(getByLocator(locatorType));
 	}
 	
-	private WebElement getWebElement(WebDriver driver, String locatorType, String...params) {
+	public WebElement getWebElement(WebDriver driver, String locatorType, String...params) {
 		return driver.findElement(getByLocator(getDynamicXpath(locatorType, params)));
 	}
 	
@@ -352,8 +356,16 @@ public class BasePage {
 		return getWebElement(driver, locatorType).isSelected();
 	}
 	
+	public boolean isElementSelected(WebDriver driver, String locatorType,String... params) {
+		return getWebElement(driver, getDynamicXpath(locatorType, params)).isSelected();
+	}
+	
 	public boolean isElementEnabled(WebDriver driver, String locatorType) {
 		return getWebElement(driver, locatorType).isEnabled();
+	}
+	
+	public boolean isElementEnabled(WebDriver driver, String locatorType, String...params) {
+		return getWebElement(driver, getDynamicXpath(locatorType, params)).isEnabled();
 	}
 	
 	public void switchToFrameIframe(WebDriver driver, String locatorType) {
@@ -404,6 +416,18 @@ public class BasePage {
 	public void removeAttributeInDOM(WebDriver driver, String locatorType, String attributeRemove) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');", getWebElement(driver, locatorType));
+	}
+	
+	public boolean isJQueryAjaxLoadedSuccess(WebDriver driver) {
+		WebDriverWait explicitWait= new WebDriverWait(driver, longTimeout);
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				return(Boolean)jsExecutor.executeScript("return (window.jQuery !=null) && (jQuery.active===0);");
+			}
+		};
+		return explicitWait.until(jQueryLoad);
 	}
 
 	public boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
@@ -689,6 +713,56 @@ public class BasePage {
 			return getElementText(driver, pageUIs.hrm.BasePageUI.TABLE_ROW_BY_COLUMN_INDEX_AND_ROW_INDEX, tableID,rowIndex,String.valueOf(columnIndex));
 		}
 		
+		public LoginPageObject logoutToSystem(WebDriver driver) {
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.WELCOME_USER_LINK);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.WELCOME_USER_LINK);
+			waitForElementClickable(driver, pageUIs.hrm.BasePageUI.LOGOUT_LINK);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.LOGOUT_LINK);
+			return PageGenerator.getLoginPage(driver);
+		}
+		
+		public DashboardPageObject loginToSystem(WebDriver driver, String userName, String password) {
+			waitForElementVisible(driver, pageUIs.hrm.BasePageUI.USER_LOGIN_TEXTBOX);
+			sendkeyToElement(driver, pageUIs.hrm.BasePageUI.USER_LOGIN_TEXTBOX, userName);
+			sendkeyToElement(driver, pageUIs.hrm.BasePageUI.PASSWORD_LOGIN_TEXTBOX, password);
+			clickToElement(driver, pageUIs.hrm.BasePageUI.LOGIN_BUTTON);
+			return PageGenerator.getDashboardPage(driver);
+		}
+		
+		public void uploadImage(WebDriver driver, String filePath) {
+			
+			getWebElement(driver, pageUIs.hrm.BasePageUI.UPLOAD_FILE).sendKeys(filePath);
+		
+		}
+		
+		public boolean isSuccessMessageDisplayed(WebDriver driver, String messageValue) {
+			waitForElementVisible(driver, pageUIs.hrm.BasePageUI.SUCCESS_MESSAGE_VALUE,messageValue);
+			return isElementDisplayed(driver, pageUIs.hrm.BasePageUI.SUCCESS_MESSAGE_VALUE,messageValue);
+			
+		}
+		
+		public boolean isFieldEnableByName(WebDriver driver, String fieldID) {
+			waitForElementVisible(driver, pageUIs.hrm.BasePageUI.ANY_FIELD_BY_ID, fieldID);
+			return isElementEnabled(driver, pageUIs.hrm.BasePageUI.ANY_FIELD_BY_ID, fieldID);
+		}
+		
+		public void clickToRadioByLabel(WebDriver driver,String radioLabelName) {
+			waitForElementClickable(driver,pageUIs.hrm.BasePageUI.RADIO_BY_LABEL , radioLabelName);
+			checkToDefaultCheckboxRadio(driver,pageUIs.hrm.BasePageUI.RADIO_BY_LABEL , radioLabelName);
+		}
+		
+		public boolean isRadioButtonSelectedByLabel(WebDriver driver, String labelName) {
+			waitForElementVisible(driver,pageUIs.hrm.BasePageUI.RADIO_BY_LABEL,labelName);
+			return isElementSelected(driver,pageUIs.hrm.BasePageUI.RADIO_BY_LABEL,labelName);
+		}
+		
+		public List<WebElement> getElements(WebDriver driver, String locator) {
+			return driver.findElements(getByXpath(locator));
+		}
+		
+		public By getByXpath(String locator) {
+			return By.xpath(locator);
+		}
 		
 	private long longTimeout = 30;
 	private long shortTimeout = 5;
