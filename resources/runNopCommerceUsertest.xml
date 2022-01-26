@@ -16,7 +16,7 @@
   <parameter name="browser" value="firefox"/>
     <classes>
       <!-- <class name="com.nopcommerce.common.Common_01_Login"/> -->
-      <class name="com.nopcommerce.user.Level_15_Register_Login_Pattern_Object"/>
+      <class name="com.nopcommerce.user.Testcase_05_Sort_Display_Paging"/>
     </classes>
   </test> 
   

@@ -19,8 +19,8 @@ public class PageGenerator {
 		return new EmployeeListPageObject(driver);
 	}
 	
-	public static PersonalDetailPageObject getPersonalDetailPage(WebDriver driver) {
-		return new PersonalDetailPageObject(driver);
+	public static MyInforPO getMyInforPage(WebDriver driver) {
+		return new MyInforPO(driver);
 	}
 
 }

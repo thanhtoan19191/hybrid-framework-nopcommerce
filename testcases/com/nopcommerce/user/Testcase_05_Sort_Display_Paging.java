@@ -48,17 +48,19 @@ public class Testcase_05_Sort_Display_Paging extends BaseTest {
 		
 	}
 
-	//@Test
+	@Test
 	public void Testcase_01_Sort_Name_A_To_Z() {
 		homePage.selectItemInSortDropdown("Name: A to Z");
 		verifyTrue(homePage.isProductNameSortAcseDing());
-	
+		homePage.sleepInsecond(5);
 	}
 
-	//@Test
+	@Test
 	public void Testcase_02_Sort_Name_Z_To_A() {
+		homePage.sleepInsecond(5);
 		homePage.selectItemInSortDropdown("Name: Z to A");
 		verifyTrue(homePage.isProductNameSortDescenDing());
+		homePage.sleepInsecond(5);
 	}
 
 	@Test
